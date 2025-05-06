@@ -3,13 +3,37 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Los Paolo Hermanos</title>
-    <link rel="stylesheet" href="/app/static/classifier.css" >
+    <link rel="stylesheet" href="{{ url_for('static', filename='classifier.css') }}" >
 </head>
 
 <body>
 
-    <section>
-        
+    <section id="title-upload">
+        <h1>Arabica Coffee Bean Grading</h1>
+        <div id="upload">
+            <img src="{{ url_for('static', filename='images/upload-sign.png')}}" alt="Upload Sign">
+            <p>Upload Image/s here</p>
+            <button>Upload</button>
+        </div>
     </section>
 
+    <section id="grade-a-c">
+        <h2>Grade-A, Grade-AA, Grade-AAA, Grade-AB, Grade-C:</h2>
+        <p>These grades represent the different levels of quality which is determined by a coffee bean’s size and number of defects. 
+            The higher grade (Grade-AAA) indicates that the coffee bean has a larger size with minimal defects. 
+            In contrast, lower grade (Grade-C) indicates that the coffee bean has a smaller size and more defects (Sucaf ina: Plantation AA, n.d.-b).</p>
+
+    </section>
+
+    <section id="grade-pb">
+        <h2>PB-I and PB-II</h2>
+        <p>The PB for these gradings stands for Peaberry. This type of grading refers to the coffee beans that occur when a single bean develops inside the coffee (Nair, 2022). 
+            PB-I coffee beans are considered as a higher-quality grade, while PB-II refers to a lower-quality grade (Sucaf ina: Plantation AA, n.d.-b).</p>
+
+    </section>
+
+    <section id="grade-bits-bulk">
+        <h2>PB-I and PB-II</h2>
+        <p>This type of gradings refers to the coffee beans that are broken, chipped, or defective. BULK refers to a mixture of ungraded and unsorted coffee beans (Sucaf ina: Plantation AA, n.d.).</p>
+    </section>
 </body>

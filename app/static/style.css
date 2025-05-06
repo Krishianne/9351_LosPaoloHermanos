@@ -1,13 +1,13 @@
 
 :root {
     --background-color: #ebdfd1;
-    --font-color: #38220f;
+    --primary-color: #38220f;
     --secondary-color: #967259;
 }
 
 @font-face {
     font-family: Recoleta;
-    src: url(fonts/Recoleta-RegularDEMO.otf);
+    src: url(fonts/Recoleta-RegularDEMO\ 2.otf);
 }
 
 @font-face {
