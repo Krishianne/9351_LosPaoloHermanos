@@ -91,7 +91,7 @@ main > div[class^="main-article"] {
     padding: 20px;
     max-width: 800px;
     margin: 0 auto;
-    font-size: 1.3rem;   
+    font-size: 1.4rem;   
     line-height: 1.6;     
     text-align: justify; 
     font-family: 'Merriweather', sans-serif;
@@ -160,6 +160,26 @@ main > div[class^="main-article"] {
 .main-article-4 {
     flex-direction: row-reverse;
 }
+
+.main-article-1,
+.main-article-2,
+.main-article-3,
+.main-article-4,
+.main-article-5 {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.main-article-1.show,
+.main-article-2.show,
+.main-article-3.show,
+.main-article-4.show,
+.main-article-5.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 
 
 /* Footer */
