@@ -1,1 +1,209 @@
 @import url(style.css);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ebdfd1;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ebdfd1;
+    padding: 7px 40px;
+    border-bottom: 5px solid #37220d; 
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 100px;
+}
+
+.nav-buttons button {
+    background: none;
+    border: none;
+    font-size: 25px; 
+    cursor: pointer;
+    color: #333;
+    transition: color 0.3s;
+    font-family: 'Merriweather', sans-serif;
+    color: #352310;
+}
+
+.nav-buttons button:hover {
+    color: #7a5c3a;
+    text-decoration: underline;
+}
+
+.header-icon img {
+    height: 65px; 
+    width: auto;
+}
+
+
+
+/* Main banner */
+.main-banner {
+    background-image: url('/app/static/images/coffee-banner.gif');
+    background-size: cover;
+    background-position: center;
+    height: 55vh;
+    width: 100%;
+    border-bottom: 5px solid #37220d; 
+}
+
+/* Main title */
+.main-title {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.main-title h1 {
+    font-size: 45px;
+    margin-bottom: 10px;
+    font-family: 'Merriweather', sans-serif;
+    color: #352310;
+}
+
+.main-title p {
+    font-size: 20px;
+    font-family: 'Merriweather', sans-serif;
+    color: #352310;
+}
+
+/* Main articles */
+main > div[class^="main-article"] {
+    display: flex;
+    align-items: center;
+    padding: 40px 0;  
+}
+
+.article-1-text,
+.article-2-text {
+    width: 60%;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.3rem;   
+    line-height: 1.6;     
+    text-align: justify; 
+    font-family: 'Merriweather', sans-serif;
+    color: #352310;
+}
+
+.article-3-text,
+.article-4-text,
+.article-5-text {
+    width: 65%;
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    font-size: 1.3rem;   
+    line-height: 1.6;     
+    text-align: justify; 
+    font-family: 'Merriweather', sans-serif;
+    color: #352310;
+}
+
+.article-1-img,
+.article-2-img {
+    width: 40vw;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    padding: 0;   
+    margin: 0;
+}
+
+.article-3-img,
+.article-4-img,
+.article-5-img {
+    width: 30vw;
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+    padding: 0;   
+    margin: 0;
+}
+
+/* Article images */
+.article-1-img {
+    background-image: url('/app/static/images/coffee-1.png');
+}
+.article-2-img {
+    background-image: url('/app/static/images/coffee-2.png');
+}
+.article-3-img {
+    background-image: url('/app/static/images/coffee-3.png');
+}
+.article-4-img {
+    background-image: url('/app/static/images/coffee-4.png');
+}
+.article-5-img {
+    background-image: url('/app/static/images/coffee-5.png');
+}
+
+.main-article-1,
+.main-article-3,
+.main-article-5 {
+    flex-direction: row;
+}
+
+.main-article-2,
+.main-article-4 {
+    flex-direction: row-reverse;
+}
+
+
+/* Footer */
+footer {
+    background-color: #37220d;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    color: #eaddd2;
+}
+
+.footer-icon img {
+    width: 320px;
+    height: auto;
+    padding-right: 20px;
+}
+
+.footer-contacts {
+    flex: 2;
+    margin: 0 20px;
+}
+
+.footer-contacts h1 {
+    margin-bottom: 10px;
+    font-family: 'Merriweather', sans-serif;
+}
+
+.footer-contact-columns {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-names p,
+.footer-emails p {
+    margin: 2px 0;
+    font-family: 'Merriweather', sans-serif;
+    font-size: 1.1rem; 
+}
+
+.footer-references {
+    flex: 1;
+    margin-left: 10px;
+    border-left: 2px solid #eaddd2;
+    padding-left: 10px;
+    font-family: 'Merriweather', sans-serif;
+}
