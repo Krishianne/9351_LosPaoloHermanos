@@ -1,0 +1,16 @@
+
+:root {
+    --background-color: #ebdfd1;
+    --font-color: #38220f;
+    --secondary-color: #967259;
+}
+
+@font-face {
+    font-family: Recoleta;
+    src: url(fonts/Recoleta-RegularDEMO.otf);
+}
+
+@font-face {
+    font-family: Merriweather;
+    src: url(fonts/Merriweather-VariableFont_opsz\,wdth\,wght.ttf);
+}
