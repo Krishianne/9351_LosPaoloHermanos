@@ -8,17 +8,55 @@
 
 <body>
 
+     <!-- Header for Navigation -->
+     <header>
+        <div class="header-icon">
+            <img src="{{ url_for('static', filename='images/LosPaoloHermanos-Logo.png') }}" alt="Los Paolo Hermanos Logo">
+    </div>
+        </div>
+        <div class="nav-buttons">
+            <button> Home </button>
+            <button> Classifier </button>
+            <button> About </button>
+        </div>
+    </header>
+
+    <!-- Banner Section -->
+    <img id="banner" src="{{ url_for('static', filename='images/coffee-banner.gif')}}" alt="Coffee Banner">
+
+
+    <!-- Upload Pictures Section -->
     <section id="title-upload">
         <h1>Arabica Coffee Bean Grading</h1>
+        <div id="instructions">
+            <h2>How to use?</h2>
+            <ol>
+                <li> Prepare the batch of beans to be graded</li>
+                <li> Lay the beans facing the same direction on a white cloth</li>
+                <li> Take a picture of the beans on the white cloth or f lat surface. For reference, refer to the images below:</li>
+
+                <div id="instructions-image">
+                    <img src="{{ url_for('static', filename='images/sample-beans-1.png')}}" alt="Sample Beans 1">
+                    <img src="{{ url_for('static', filename='images/sample-beans-2.png')}}" alt="Sample Beans 2">
+                </div>
+
+                <li> Upload the capture image/s into the classif ier using the upload button below</li>
+            </ol>
+        </div>
+
         <div id="upload">
             <img src="{{ url_for('static', filename='images/upload-sign.png')}}" alt="Upload Sign">
             <p>Upload Image/s here</p>
-            <button>Upload</button>
+            <input type="file" id="imageInput" accept="image/*" style="display: none;">
+            <label for="imageInput" class="upload-button">Upload</label>
         </div>
     </section>
 
+    <!-- Grades Section -->
+    <h2>WHAT ARE THE COFFEE BEAN GRADES?</h2>
+
     <section id="grade-a-c">
-        <h2>Grade-A, Grade-AA, Grade-AAA, Grade-AB, Grade-C:</h2>
+        <h3>Grade-A, Grade-AA, Grade-AAA, Grade-AB, Grade-C:</h2>
         <p>These grades represent the different levels of quality which is determined by a coffee bean’s size and number of defects. 
             The higher grade (Grade-AAA) indicates that the coffee bean has a larger size with minimal defects. 
             In contrast, lower grade (Grade-C) indicates that the coffee bean has a smaller size and more defects (Sucaf ina: Plantation AA, n.d.-b).</p>
@@ -26,14 +64,47 @@
     </section>
 
     <section id="grade-pb">
-        <h2>PB-I and PB-II</h2>
+        <h3>PB-I and PB-II</h2>
         <p>The PB for these gradings stands for Peaberry. This type of grading refers to the coffee beans that occur when a single bean develops inside the coffee (Nair, 2022). 
             PB-I coffee beans are considered as a higher-quality grade, while PB-II refers to a lower-quality grade (Sucaf ina: Plantation AA, n.d.-b).</p>
 
     </section>
 
     <section id="grade-bits-bulk">
-        <h2>PB-I and PB-II</h2>
+        <h3>PB-I and PB-II</h2>
         <p>This type of gradings refers to the coffee beans that are broken, chipped, or defective. BULK refers to a mixture of ungraded and unsorted coffee beans (Sucaf ina: Plantation AA, n.d.).</p>
     </section>
+
+    <!--Footer Section-->
+    <footer>
+        <div class="footer-icon">
+            <img src="{{ url_for('static', filename='images/LosPaoloHermanos-Logo.png')}}" alt="Los Paolo Hermanos Logo">
+        </div>
+        <div class="footer-contacts">
+            <h1>Contact Us</h1>
+            <div class="footer-contact-columns">
+                <div class="footer-names">
+                    <p>ALCAPARRAS, Krishianne Mae</p>
+                    <p>BROMEO, Emmanuel Paolo</p>
+                    <p>CAGULADA, Sheryn Ann</p>
+                    <p>CALSIMAN, Carl Allan</p>
+                    <p>CENDANA, Juliana April</p>
+                    <p>GALVAN, Marc Jansen</p>
+                    <p>MUNAR, Dulthe Carlo Jr.</p>
+                </div>
+                <div class="footer-emails">
+                    <p>2234798@slu.edu.ph</p>
+                    <p>2233274@slu.edu.ph</p>
+                    <p>2230764@slu.edu.ph</p>
+                    <p>2234060@slu.edu.ph</p>
+                    <p>2233171@slu.edu.ph</p>
+                    <p>230714@slu.edu.ph</p>
+                    <p>2230142@slu.edu.ph</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-references">
+            <h1>References</h1>
+        </div>
+    </footer>
 </body>

@@ -7,23 +7,129 @@ body {
     background-color: var(--background-color);
 }
 
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ebdfd1;
+    padding: 7px 40px;
+    border-bottom: 5px solid #37220d; 
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 100px;
+}
+
+.nav-buttons button {
+    background: none;
+    border: none;
+    font-size: 25px; 
+    cursor: pointer;
+    color: #333;
+    transition: color 0.3s;
+    font-family: 'Merriweather', sans-serif;
+    color: #352310;
+}
+
+.nav-buttons button:hover {
+    color: #7a5c3a;
+    text-decoration: underline;
+}
+
+.header-icon img {
+    height: 65px; 
+    width: auto;
+}
+
+/* BANNER */
+
+#banner {
+    height: 120px;
+    width: 100%;
+    object-fit: cover;
+    border-bottom: 4px solid;
+    border-color: var(--secondary-color);
+}
+
+#banner::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+/* INSTRUCTIONS */
 #title-upload {
+    width: 100%;
     text-align: center;
     display: flex;
     align-items: center;
-    justify-content: center;
     flex-direction: column;
+    bottom: 0;
 }
 
 h1 {
     color: var(--primary-color);
-    font-family: Recoleta;
+    font-family: Recoleta Bold;
     font-size: 28px;
 }
 
+#instructions {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+#instructions h2 {
+    align-items: flex-start;
+    margin-top: 0;
+    margin-bottom: 5px;
+    text-align: left;
+    font-family: Recoleta Bold;
+    font-size: 21px;
+}
+
+#instructions ol {
+    text-align: left;
+    margin: 0px 50px;
+}
+
+#instructions ol li {
+    font-family: Recoleta;
+    font-size: 21;
+    margin-bottom: 15px;
+}
+
+
+#instructions-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+    gap: 20px;
+}
+
+#instructions img {
+    width: 334px;
+    height: 225px;
+    border: 2px solid;
+    border-color: var(--primary-color);
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+
+/* UPLOAD PICTURES */
+
 #upload {
     height: 402px;
-    width: 1140px;
+    width: 93%;
     background-color: var(--secondary-color);
     border: 4px dashed;
     border-color: var(--primary-color);
@@ -31,7 +137,6 @@ h1 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    line-height: 1.2px;
 }
 
 #upload img {
@@ -44,7 +149,7 @@ h1 {
     font-size: 21px;
 }
 
-#upload button {
+.upload-button {
     text-align: center;
     background-color: var(--background-color);
     font-family: Merriweather;
@@ -58,28 +163,33 @@ h1 {
     transition: all 0.3s ease;
 }
 
-#upload button:hover {
+.upload-button:hover {
     background-color: var(--primary-color);
     color: var(--background-color);
     border-color: var(--primary-color);
 }
 
-#grade-a-c {
+
+/* GRADES SECTION */
+h2 {
+    color: var(--primary-color);
+    font-family: Recoleta Bold;
+    font-size: 21px;
     margin-left: 50px;
     margin-top: 40px;
 }
 
-#grade-pb, #grade-bits-bulk {
+#grade-a-c, #grade-pb, #grade-bits-bulk {
     margin-left: 50px;
     margin-top: 15px;
+    margin-right: 50px;
 }
 
-#grade-a-c h2, #grade-pb h2, #grade-bits-bulk h2 {
+#grade-a-c h3, #grade-pb h3, #grade-bits-bulk h3 {
     color: var(--primary-color);
     text-align: left;
-    font-family: Recoleta;
+    font-family: Recoleta Bold;
     font-size: 21;
-    font-weight: bold;
 }
 
 #grade-a-c p, #grade-pb p, #grade-bits-bulk p {
@@ -87,4 +197,50 @@ h1 {
     text-align: left;
     font-family: Recoleta;
     font-size: 21;
+}
+
+/* Footer */
+footer {
+    background-color: #37220d;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    color: #eaddd2;
+}
+
+.footer-icon img {
+    width: 320px;
+    height: auto;
+    padding-right: 20px;
+}
+
+.footer-contacts {
+    flex: 2;
+    margin: 0 20px;
+}
+
+.footer-contacts h1 {
+    margin-bottom: 10px;
+    font-family: 'Merriweather', sans-serif;
+}
+
+.footer-contact-columns {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-names p,
+.footer-emails p {
+    margin: 2px 0;
+    font-family: 'Merriweather', sans-serif;
+    font-size: 1.1rem; 
+}
+
+.footer-references {
+    flex: 1;
+    margin-left: 10px;
+    border-left: 2px solid #eaddd2;
+    padding-left: 10px;
+    font-family: 'Merriweather', sans-serif;
 }
