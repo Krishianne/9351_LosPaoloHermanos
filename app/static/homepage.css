@@ -52,7 +52,7 @@ header {
     background-image: url('/app/static/images/coffee-banner.gif');
     background-size: cover;
     background-position: center;
-    height: 55vh;
+    height: 25vh;
     width: 100%;
     border-bottom: 5px solid #37220d; 
 }
