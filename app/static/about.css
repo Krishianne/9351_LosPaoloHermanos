@@ -47,6 +47,15 @@ header {
     width: auto;
 }
 
+.main-banner {
+    background-image: url('images/coffee-banner.gif');
+    background-size: cover;
+    background-position: center;
+    height: 17vh;
+    width: 100%;
+    border-bottom: 5px solid #37220d; 
+}
+
 /* Main - About */
 
 .about-info {

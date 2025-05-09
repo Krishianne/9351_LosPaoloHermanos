@@ -4,20 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Los Paolo Hermanos</title>
-    <link rel="stylesheet" href="/app/static/homepage.css">
-    <link rel="icon" type="image/x-icon" href="/app/static/images/LosPaoloHermanos-Logo.png">
+    <link rel="stylesheet" href="{{ url_for('static', filename='homepage.css') }}">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/LosPaoloHermanos-Logo.png') }}">
 </head>
 <body>
     <!-- Header for Navigation -->
     <header>
         <div class="header-icon">
-            <img src="/app/static/images/LosPaoloHermanos-Logo.png" alt="Los Paolo Hermanos Logo">
+            <img src="{{ url_for('static', filename='images/LosPaoloHermanos-Logo.png') }}" alt="Los Paolo Hermanos Logo">
         </div>
         </div>
         <div class="nav-buttons">
-            <button> Home </button>
-            <button> Classifier </button>
-            <button> About </button>
+            <a href="{{ url_for('main.index') }}">
+                <button> Home </button>
+            </a>
+            <a href="{{ url_for('main.classifier') }}">
+                <button> Classifier </button>
+            </a>
+            <a href="{{ url_for('main.about') }}">
+                <button> About </button>
+            </a>
         </div>
     </header>
 
@@ -101,7 +107,7 @@
 
     <footer>
         <div class="footer-icon">
-            <img src="/app/static/images/LosPaoloHermanos-Logo.png" alt="Los Paolo Hermanos Logo">
+            <img src="{{ url_for('static', filename='images/LosPaoloHermanos-Logo.png') }}" alt="Los Paolo Hermanos Logo">
         </div>
         <div class="footer-contacts">
             <h1>Contact Us</h1>
@@ -131,7 +137,7 @@
         </div>
     </footer>
     
-    <script src="/app/javascript/homepage.js"></script>
+    <script src="{{ url_for('static', filename='scripts/homepage.js') }}"></script>
     
 </body>
 </html>

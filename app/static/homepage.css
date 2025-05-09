@@ -49,10 +49,10 @@ header {
 
 /* Main banner */
 .main-banner {
-    background-image: url('/app/static/images/coffee-banner.gif');
+    background-image: url('images/coffee-banner.gif');
     background-size: cover;
     background-position: center;
-    height: 25vh;
+    height: 17vh;
     width: 100%;
     border-bottom: 5px solid #37220d; 
 }
@@ -133,19 +133,19 @@ main > div[class^="main-article"] {
 
 /* Article images */
 .article-1-img {
-    background-image: url('/app/static/images/coffee-1.png');
+    background-image: url('images/coffee-1.png');
 }
 .article-2-img {
-    background-image: url('/app/static/images/coffee-2.png');
+    background-image: url('images/coffee-2.png');
 }
 .article-3-img {
-    background-image: url('/app/static/images/coffee-3.png');
+    background-image: url('images/coffee-3.png');
 }
 .article-4-img {
-    background-image: url('/app/static/images/coffee-4.png');
+    background-image: url('images/coffee-4.png');
 }
 .article-5-img {
-    background-image: url('/app/static/images/coffee-5.png');
+    background-image: url('images/coffee-5.png');
 }
 
 .main-article-1,

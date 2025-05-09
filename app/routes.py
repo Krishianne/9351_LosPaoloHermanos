@@ -11,7 +11,7 @@ main = Blueprint('main', __name__)
 
 @main.route('/')
 def index():
-    return render_template('classifier.html')  # Input form
+    return render_template('homepage.html')  # Input form
 
 @main.route('/about')
 def about():

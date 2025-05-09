@@ -15,9 +15,15 @@
     </div>
         </div>
         <div class="nav-buttons">
-            <button> Home </button>
-            <button> Classifier </button>
-            <button> About </button>
+            <a href="{{ url_for('main.index') }}">
+                <button> Home </button>
+            </a>
+            <a href="{{ url_for('main.classifier') }}">
+                <button> Classifier </button>
+            </a>
+            <a href="{{ url_for('main.about') }}">
+                <button> About </button>
+            </a>
         </div>
     </header>
 
