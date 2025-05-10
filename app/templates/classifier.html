@@ -53,8 +53,10 @@
         <div id="upload">
             <img src="{{ url_for('static', filename='images/upload-sign.png')}}" alt="Upload Sign">
             <p>Upload Image/s here</p>
-            <input type="file" id="imageInput" accept="image/*" style="display: none;">
-            <label for="imageInput" class="upload-button">Upload</label>
+            <form id="upload-form" action="/upload" method="post">
+                <input type="file" id="imageInput" name="imageInput" accept="image/*" style="display: none;">
+                <label for="imageInput" id="upload-button">Upload</label>
+            </form>
         </div>
     </section>
 
@@ -113,4 +115,6 @@
             <h1>References</h1>
         </div>
     </footer>
+
+    <script src="{{ url_for('static', filename='scripts/classifier.js')}}"></script>
 </body>

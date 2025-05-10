@@ -1,6 +1,7 @@
-from flask import Blueprint, render_template, request
+from flask import Blueprint, render_template, request, Flask
 import joblib
 import os
+from werkzeug.utils import secure_filename
 
 # Create a Blueprint for organizing routes
 main = Blueprint('main', __name__)
@@ -21,6 +22,28 @@ def about():
 @main.route('/class')
 def classifier():
     return render_template('classifier.html') # Navigate to classifier
+
+@main.route('/upload', methods=['POST'])
+def upload():
+    if 'imageInput' not in request.files:
+        return {'error': 'No file part'}, 400
+
+    file = request.files['imageInput']
+    if file.filename == '':
+        return {'error': 'No selected file'}, 400
+
+    # Check and save file
+    if file:
+        filename = secure_filename(file.filename)
+        upload_folder = os.path.join(os.getcwd(), 'app','static', 'uploads')
+        os.makedirs(upload_folder, exist_ok=True)  # Ensure folder exists
+        file_path = os.path.join(upload_folder, filename)
+        file.save(file_path)
+
+        return {'message': 'File uploaded', 'url': f'/static/uploads/{filename}'}, 200
+
+    return {'error': 'Upload failed'}, 400
+
 
 # @main.route('/predict', methods=['POST'])
 # def predict():

@@ -77,7 +77,7 @@ header {
 h1 {
     color: var(--primary-color);
     font-family: Recoleta Bold;
-    font-size: 28px;
+    font-size: 45px;
 }
 
 #instructions {
@@ -91,7 +91,7 @@ h1 {
     margin-bottom: 5px;
     text-align: left;
     font-family: Recoleta Bold;
-    font-size: 21px;
+    font-size: 35px;
 }
 
 #instructions ol {
@@ -101,10 +101,9 @@ h1 {
 
 #instructions ol li {
     font-family: Recoleta;
-    font-size: 21;
+    font-size: 25px;
     margin-bottom: 15px;
 }
-
 
 #instructions-image {
     display: flex;
@@ -146,10 +145,10 @@ h1 {
 #upload p {
     font-family: Recoleta;
     color: var(--background-color);
-    font-size: 21px;
+    font-size: 25px;
 }
 
-.upload-button {
+#upload-button {
     text-align: center;
     background-color: var(--background-color);
     font-family: Merriweather;
@@ -163,7 +162,7 @@ h1 {
     transition: all 0.3s ease;
 }
 
-.upload-button:hover {
+#upload-button:hover {
     background-color: var(--primary-color);
     color: var(--background-color);
     border-color: var(--primary-color);
@@ -174,7 +173,7 @@ h1 {
 h2 {
     color: var(--primary-color);
     font-family: Recoleta Bold;
-    font-size: 21px;
+    font-size: 30px;
     margin-left: 50px;
     margin-top: 40px;
 }
@@ -185,18 +184,22 @@ h2 {
     margin-right: 50px;
 }
 
+#grade-bits-bulk {
+    margin-bottom: 50px;
+}
+
 #grade-a-c h3, #grade-pb h3, #grade-bits-bulk h3 {
     color: var(--primary-color);
     text-align: left;
     font-family: Recoleta Bold;
-    font-size: 21;
+    font-size: 25px;
 }
 
 #grade-a-c p, #grade-pb p, #grade-bits-bulk p {
     color: var(--primary-color);
     text-align: left;
     font-family: Recoleta;
-    font-size: 21;
+    font-size: 21px;
 }
 
 /* Footer */
