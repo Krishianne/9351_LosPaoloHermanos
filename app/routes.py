@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, Flask
+from flask import Blueprint, render_template, request, Flask, jsonify
 import joblib
 import os
 from werkzeug.utils import secure_filename
@@ -26,23 +26,40 @@ def classifier():
 @main.route('/upload', methods=['POST'])
 def upload():
     if 'imageInput' not in request.files:
-        return {'error': 'No file part'}, 400
+        return jsonify({'error': 'No file part'}), 400
 
     file = request.files['imageInput']
     if file.filename == '':
-        return {'error': 'No selected file'}, 400
+        return jsonify({'error': 'No selected file'}), 400
 
-    # Check and save file
     if file:
         filename = secure_filename(file.filename)
-        upload_folder = os.path.join(os.getcwd(), 'app','static', 'uploads')
+        upload_folder = os.path.join(os.getcwd(), 'app', 'static', 'uploads')
         os.makedirs(upload_folder, exist_ok=True)  # Ensure folder exists
         file_path = os.path.join(upload_folder, filename)
         file.save(file_path)
 
-        return {'message': 'File uploaded', 'url': f'/static/uploads/{filename}'}, 200
+        return jsonify({
+            'message': 'File uploaded',
+            'filename': filename,  # for deletion
+            'url': f'/static/uploads/{filename}'  # for preview
+        }), 200
 
-    return {'error': 'Upload failed'}, 400
+    return jsonify({'error': 'Upload failed'}), 400
+
+@main.route('/delete-image', methods=['POST'])
+def delete_image():
+    data = request.get_json()
+    filename = data.get('filename')
+    if not filename:
+        return jsonify({'error': 'Filename not provided'}), 400
+
+    file_path = os.path.join(os.getcwd(), 'app', 'static', 'uploads', filename)
+    if os.path.exists(file_path):
+        os.remove(file_path)
+        return jsonify({'message': 'File deleted'}), 200
+
+    return jsonify({'error': 'File not found'}), 404
 
 
 # @main.route('/predict', methods=['POST'])

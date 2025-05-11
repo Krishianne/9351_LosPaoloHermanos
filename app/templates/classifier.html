@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Los Paolo Hermanos</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='classifier.css') }}" >
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/LosPaoloHermanos-Logo.png') }}">
 </head>
 
 <body>
@@ -51,13 +52,22 @@
         </div>
 
         <div id="upload">
-            <img src="{{ url_for('static', filename='images/upload-sign.png')}}" alt="Upload Sign">
-            <p>Upload Image/s here</p>
+            <!-- Image preview container -->
+            <div id="image-preview"></div>
+
+            <div id="upload-placeholder">
+                <img src="{{ url_for('static', filename='images/upload-sign.png')}}" alt="Upload Sign">
+                <p>Upload Image/s here</p>
+            </div>
+
+            <!-- Upload form for selecting files -->
             <form id="upload-form" action="/upload" method="post">
                 <input type="file" id="imageInput" name="imageInput" accept="image/*" style="display: none;">
                 <label for="imageInput" id="upload-button">Upload</label>
             </form>
         </div>
+
+
     </section>
 
     <!-- Grades Section -->
