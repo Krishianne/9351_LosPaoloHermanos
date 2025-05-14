@@ -4,6 +4,7 @@ import os
 from werkzeug.utils import secure_filename
 from ultralytics import YOLO
 from PIL import Image
+from collections import Counter
 import numpy as np
 import io
 import base64
@@ -13,7 +14,6 @@ import cv2
 main = Blueprint('main', __name__)
 
 # Load the YOLO model
-model = None
 
 def load_model():
     global model
@@ -38,43 +38,31 @@ def segment_coffee_beans(image_path):
     
     # Convert to grayscale
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-    
+    blurred = cv2.GaussianBlur(gray, (7, 7), 0)
     # Apply threshold to separate beans from white background
-    _, thresh = cv2.threshold(gray, 200, 255, cv2.THRESH_BINARY_INV)
-    
-    # Apply morphological operations to remove noise
-    kernel = np.ones((5,5), np.uint8)
-    opening = cv2.morphologyEx(thresh, cv2.MORPH_OPEN, kernel, iterations=2)
+    _, thresh = cv2.threshold(blurred, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)
     
     # Find contours of beans
-    contours, _ = cv2.findContours(opening, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+    contours, _ = cv2.findContours(thresh, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
     
     # Filter contours by area to remove small noise
-    min_area = 100  # Adjust based on your image size and bean size
+    min_area = 200  # Adjust based on your image size and bean size
     bean_contours = [cnt for cnt in contours if cv2.contourArea(cnt) > min_area]
     
     # Create individual bean images
     bean_images = []
     bean_boxes = []
-    padding = 10  # Add some padding around each bean
     
     for i, cnt in enumerate(bean_contours):
         # Get bounding box
         x, y, w, h = cv2.boundingRect(cnt)
         
-        # Add padding but stay within image bounds
-        x1 = max(0, x - padding)
-        y1 = max(0, y - padding)
-        x2 = min(img.shape[1], x + w + padding)
-        y2 = min(img.shape[0], y + h + padding)
-        
         # Crop the bean
-        bean_img = img[y1:y2, x1:x2]
+        bean_img = img[y:y+h, x:x+w]
         
         # Only add if the bean image is not empty
         if bean_img.size > 0:
             bean_images.append(bean_img)
-            bean_boxes.append((x1, y1, x2, y2))
     
     return img, bean_images, bean_boxes
 
@@ -108,6 +96,8 @@ def upload():
         file.save(file_path)
 
         img, bean_images, _ = segment_coffee_beans(file_path)
+        print(len(bean_images))
+        print(model.names)
         grades = []
         for i, bean_img in enumerate(bean_images):
             bean_filename = f"bean_{i}.jpg"
@@ -122,8 +112,8 @@ def upload():
                 class_name = model.names[class_id]
                 grades.append(class_name)            
 
-        grade_order = ['C', 'BULK', 'BITS', 'PB-II', 'PB-I', 'AB', 'A', 'AA', 'AAA']
-        highest_grade = sorted(grades, key=lambda x: grade_order.index(x))[-1] if grades else "No beans detected"
+        grade_order = ['BULK', 'BITS', 'PB-II', 'PB-I','C', 'AB', 'A', 'AA', 'AAA']
+        highest_grade = Counter(grades).most_common(1)[0][0] if grades else "No beans detected"
 
 
         return jsonify({
