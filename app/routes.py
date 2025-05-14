@@ -103,7 +103,7 @@ def upload():
             bean_filename = f"bean_{i}.jpg"
             bean_path = os.path.join(upload_folder, bean_filename)
             cv2.imwrite(bean_path, bean_img)
-            results = model(bean_path)
+            results = model(bean_path, conf=0.15)
 
             result = results[0]
 
