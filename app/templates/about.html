@@ -64,25 +64,39 @@
           <h2>Meet The Researchers</h2>
           <div class="developer-container">
             <div class="developer">
-                <img src="" alt="Alcaparras, Krishaianne" />
+                <img src="{{ url_for('static', filename='images/Alcaparras.png') }}" alt="Alcaparras, Krishaianne" />
+                <div class="overlay"></div>
+                <div class="name">Alcaparras, Krishaianne</div>
             </div>
             <div class="developer">
-                <img src="" alt="Bromeo, Emmanuel" />
+                <img src="{{ url_for('static', filename='images/Bromeo.png') }}" alt="Bromeo, Emmanuel" />
+                <div class="overlay"></div>
+                <div class="name">Bromeo, Emmanuel</div>
             </div>
             <div class="developer">
-                <img src="" alt="Cagulada, Sheryn Ann" />
+                <img src="{{ url_for('static', filename='images/Cagulada.png') }}" alt="Cagulada, Sheryn Ann" />
+                <div class="overlay"></div>
+                <div class="name">Cagulada, Sheryn Ann</div>
             </div>
             <div class="developer">
-                <img src="" alt="Calsiman, Carl" />
+                <img src="{{ url_for('static', filename='images/Calsiman.png') }}" alt="Calsiman, Carl" />
+                <div class="overlay"></div>
+                <div class="name">Calsiman, Carl</div>
             </div>
             <div class="developer">
-                <img src="" alt="Cendana, April" />
+                <img src="{{ url_for('static', filename='images/Cendana.png') }}" alt="Cendaña, April" />
+                <div class="overlay"></div>
+                <div class="name">Cendaña, April</div>
               </div>
             <div class="developer">
-                <img src="" alt="Galvan, Marc Jansen" />
+                <img src="{{ url_for('static', filename='images/Galvan.png') }}" alt="Galvan, Marc Jansen" />
+                <div class="overlay"></div>
+                <div class="name">Galvan, Marc Jansen</div>
             </div>
             <div class="developer">
-                <img src="" alt="Munar, Dulthe Carlo Jr." />
+                <img src="{{ url_for('static', filename='images/Munar.jpg') }}" alt="Munar, Dulthe Carlo Jr." />
+                <div class="overlay"></div>
+                <div class="name">Munar, Dulthe Carlo Jr.</div>
             </div>
           </div>
         </div>
@@ -120,6 +134,8 @@
             <h1>References</h1>
         </div>
     </footer>
+
+    <script src="{{ url_for('static', filename='scripts/about.js') }}"></script>
     
 </body>
 </html>
