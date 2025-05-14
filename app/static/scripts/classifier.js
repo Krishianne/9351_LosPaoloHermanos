@@ -7,7 +7,6 @@ document.getElementById('imageInput').addEventListener('change', function(event)
     const formData = new FormData();
     formData.append('imageInput', file);
 
-    // Upload the file to the server
     fetch('/upload', {
         method: 'POST',
         body: formData
@@ -18,6 +17,7 @@ document.getElementById('imageInput').addEventListener('change', function(event)
     })
     .then(data => {
         const filename = data.filename;
+        const highestGrade = data.highest_grade;
 
         document.getElementById('upload-placeholder').style.display = 'none';
 
@@ -45,10 +45,8 @@ document.getElementById('imageInput').addEventListener('change', function(event)
             })
             .then(response => {
                 if (!response.ok) throw new Error('Delete failed.');
-                
                 wrapper.remove(); 
                 document.getElementById('imageInput').value = '';  
-                
                 const preview = document.getElementById('image-preview');
                 if (preview.children.length === 0) {
                     document.getElementById('upload-placeholder').style.display = 'flex';
@@ -59,8 +57,14 @@ document.getElementById('imageInput').addEventListener('change', function(event)
             });
         };
 
+        const resultDiv = document.createElement('div');
+        resultDiv.className = 'classification-result';
+        resultDiv.textContent = `Highest Grade: ${highestGrade}`;
+
         wrapper.appendChild(deleteBtn);
         wrapper.appendChild(img);
+        wrapper.appendChild(resultDiv);
+
         imagePreview.appendChild(wrapper);
     })
     .catch(error => {
