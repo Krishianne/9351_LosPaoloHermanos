@@ -1,0 +1,8 @@
+Flask
+joblib
+Werkzeug
+ultralytics
+Pillow
+numpy
+opencv-python
+gunicorn
