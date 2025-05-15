@@ -18,7 +18,7 @@ main = Blueprint('main', __name__)
 def load_model():
     global model
     try:
-        model_path = os.path.join(os.path.dirname(__file__), 'model', 'yolo_model.pt')
+        model_path = os.path.join(os.path.dirname(__file__), 'model', 'latest_yolo.pt')
         model = YOLO(model_path)
         print("The model was loaded successfully!")
         return True
@@ -103,7 +103,7 @@ def upload():
             bean_filename = f"bean_{i}.jpg"
             bean_path = os.path.join(upload_folder, bean_filename)
             cv2.imwrite(bean_path, bean_img)
-            results = model(bean_path, conf=0.15)
+            results = model(bean_path, conf=0.579)
 
             result = results[0]
 
