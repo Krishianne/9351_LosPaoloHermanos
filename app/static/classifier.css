@@ -301,6 +301,7 @@ footer {
 .footer-contacts h1 {
     margin-bottom: 10px;
     font-family: 'Merriweather', sans-serif;
+    color: #eaddd2
 }
 
 .footer-contact-columns {
@@ -321,5 +322,9 @@ footer {
     border-left: 2px solid #eaddd2;
     padding-left: 10px;
     font-family: 'Merriweather', sans-serif;
+}
+
+.footer-references h1{
+    color: #eaddd2
 }
 
