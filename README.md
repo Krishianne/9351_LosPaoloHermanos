@@ -13,3 +13,4 @@ A simple website for grading Arabica coffee beans as AAA, AA, A, AB, C, PB-I, PB
 - [XGBoost Colab Notebook](https://colab.research.google.com/drive/1fZ2azbd8y4EG9UvFYWcyT8OgKhM2WBo4?usp=sharing)
 - [YOLO Colab Notebook](https://colab.research.google.com/drive/1v71aqauTyDbyadto3SD1mQ1yJ6YJaPcu?usp=sharing/)
 - [CNN - Code](https://drive.google.com/drive/folders/1Ky8jnYSOTgHSWd_ezbG-a_P4lHyoBTIv?usp=sharing).
+- [Descriptive_Analytics](https://colab.research.google.com/drive/12esGPWGqMId0aNHhB_0mnP_ce__llnaI)
