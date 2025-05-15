@@ -68,7 +68,7 @@ def segment_coffee_beans(image_path):
 
 @main.route('/')
 def index():
-    return render_template('homepage.html')  # Input form
+    return render_template('index.html')  # Input form
 
 @main.route('/about')
 def about():
